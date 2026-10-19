@@ -131,3 +131,18 @@ sudo /usr/local/bin/check-telegram-api.sh
 
 cat /opt/node-exporter/textfile_collector/telegram_api.prom
 ```
+
+
+### /ect/prometheus-files/prometheus.yml
+```
+  - job_name: 'linux-hosts'
+    scrape_interval: 60s
+    scrape_timeout: 10s
+
+    static_configs:
+      - targets:
+          - 'UR_IP:9100'
+        labels:
+          hostname: 'HOSTNAME'
+          environment: 'example'
+```
